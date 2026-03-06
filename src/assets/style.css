@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    @apply font-sans bg-brand-bg text-secondary;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-brand-bg; }
+  ::-webkit-scrollbar-thumb { @apply bg-brand-border rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-brand-muted; }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-primary text-white font-semibold py-3 px-6 rounded-md
+    hover:bg-primary-dark active:scale-[0.98] transition-all duration-150
+    disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center bg-white text-secondary font-semibold py-3 px-6 rounded-md
+    border border-brand-border hover:bg-brand-bg active:scale-[0.98] transition-all duration-150;
+  }
+  .btn-outline-danger {
+    @apply inline-flex items-center justify-center bg-transparent text-danger font-semibold py-3 px-6 rounded-md
+    border border-danger hover:bg-danger hover:text-white active:scale-[0.98] transition-all duration-150;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-md border border-brand-border bg-white text-secondary
+    placeholder:text-brand-light focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20
+    transition-all duration-200 text-sm;
+  }
+  .card {
+    @apply bg-white rounded-md shadow-card;
+  }
+  .navy-gradient {
+    background: linear-gradient(135deg, #2D3D63 0%, #1B2540 100%);
+  }
+  .hero-gradient {
+    background: linear-gradient(135deg, #1B2540 0%, #1CA5F6 100%);
+  }
+  .primary-gradient {
+    background: linear-gradient(135deg, #1CA5F6 0%, #0D8FD9 100%);
+  }
+  .chip {
+    @apply px-4 py-1.5 rounded-full text-sm font-medium border cursor-pointer transition-all duration-200 whitespace-nowrap;
+  }
+  .chip-active {
+    @apply bg-primary text-white border-primary shadow-sm;
+  }
+  .chip-inactive {
+    @apply bg-white text-brand-muted border-brand-border hover:border-primary hover:text-primary;
+  }
+  .section-title {
+    @apply text-lg font-bold text-secondary mb-3;
+  }
+  .badge {
+    @apply text-xs font-semibold px-2 py-0.5 rounded-full;
+  }
+  .page-pad {
+    @apply px-4 sm:px-6;
+  }
+  .stat-card {
+    @apply card p-4 flex flex-col gap-1;
+  }
+  .nav-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200;
+  }
+  .nav-link-active {
+    @apply bg-primary text-white;
+  }
+  .nav-link-inactive {
+    @apply text-white/60 hover:bg-white/10 hover:text-white;
+  }
+}
+
+/* ─── Page transitions ────────────────────────────────────────────────── */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(6px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+/* ─── Toast slide-in ─────────────────────────────────────────────────── */
+.toast-enter-active { transition: all 0.32s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.toast-leave-active { transition: all 0.2s ease; }
+.toast-enter-from  { opacity: 0; transform: translateX(110%) scale(0.9); }
+.toast-leave-to    { opacity: 0; transform: translateX(110%); }
+
+/* ─── Modal / overlay fade ───────────────────────────────────────────── */
+.fade-enter-active, .fade-leave-active { transition: opacity 0.2s ease; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }
+
+/* ─── Slide-up (bottom sheets) ───────────────────────────────────────── */
+.slide-up-enter-active { transition: all 0.28s cubic-bezier(0.32, 0.72, 0, 1); }
+.slide-up-leave-active { transition: all 0.2s ease; }
+.slide-up-enter-from   { opacity: 0; transform: translateY(20px) scale(0.98); }
+.slide-up-leave-to     { opacity: 0; transform: translateY(12px); }
