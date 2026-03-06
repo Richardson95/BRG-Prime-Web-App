@@ -5,14 +5,14 @@
       <!-- Profile Hero Card -->
       <div class="card p-6">
         <div class="flex items-start justify-between mb-4">
-          <div class="flex items-center gap-4">
-            <div class="relative">
+          <div class="flex items-center gap-4 min-w-0">
+            <div class="relative flex-shrink-0">
               <img :src="userStore.profileImageUrl" class="w-20 h-20 rounded-2xl object-cover border-2 border-brand-border" />
               <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-success rounded-full border-2 border-white"></div>
             </div>
-            <div>
+            <div class="min-w-0">
               <div class="flex items-center gap-2">
-                <h2 class="font-extrabold text-secondary text-lg">{{ userStore.name }}</h2>
+                <h2 class="font-extrabold text-secondary text-lg truncate">{{ userStore.name }}</h2>
                 <BadgeCheck :size="17" class="text-primary" />
               </div>
               <p class="text-brand-muted text-xs mt-0.5">{{ userStore.email }}</p>

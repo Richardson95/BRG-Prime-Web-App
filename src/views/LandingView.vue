@@ -37,7 +37,9 @@
             @click="goToRegister"
             class="btn-primary px-4 py-2 text-sm font-bold gap-1.5"
           >
-            <Plus :size="15" /> Post a Property
+            <Plus :size="15" />
+            <span class="hidden sm:inline">Post a Property</span>
+            <span class="sm:hidden">Post</span>
           </button>
         </div>
       </div>

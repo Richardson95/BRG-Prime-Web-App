@@ -1,7 +1,7 @@
 <template>
   <AppLayout>
     <div class="page-pad pb-10">
-      <div class="flex items-center justify-between mb-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
         <div>
           <h2 class="text-xl font-extrabold text-secondary">Post a Listing</h2>
           <p class="text-xs text-brand-muted mt-0.5">Fill in the details to publish your property</p>
@@ -69,7 +69,7 @@
             <input v-model="form.address" class="input-field" placeholder="e.g. 14 Admiralty Way, Lekki Phase 1, Lagos" required />
           </div>
 
-          <div class="flex gap-4">
+          <div class="flex flex-col sm:flex-row gap-3">
             <div class="flex-1">
               <label class="block text-xs font-semibold text-secondary mb-1.5">Price (₦) <span class="text-danger">*</span></label>
               <div class="relative">
@@ -85,7 +85,7 @@
                 {{ priceSuffix ? `Charged per ${priceSuffix.replace('/', '')}` : 'Total sale / asking price' }}
               </p>
             </div>
-            <div class="w-32">
+            <div class="sm:w-32">
               <label class="block text-xs font-semibold text-secondary mb-1.5">Size (m²)</label>
               <input
                 :value="fmtDisplay(form.size)"
@@ -97,7 +97,7 @@
           </div>
 
           <template v-if="showBedBath">
-            <div class="flex gap-4">
+            <div class="flex flex-col sm:flex-row gap-3">
               <div class="flex-1">
                 <label class="block text-xs font-semibold text-secondary mb-1.5">Bedrooms</label>
                 <input v-model.number="form.bedrooms" type="number" min="0" max="20" class="input-field" placeholder="3" />
@@ -113,7 +113,7 @@
             </div>
           </template>
 
-          <div class="flex gap-4">
+          <div class="flex flex-col sm:flex-row gap-3">
             <div class="flex-1">
               <label class="block text-xs font-semibold text-secondary mb-1.5">Furnishing</label>
               <select v-model="form.furnishingStatus" class="input-field">
@@ -163,7 +163,7 @@
 
           <!-- Land-specific fields -->
           <template v-if="isLand">
-            <div class="flex gap-4">
+            <div class="flex flex-col sm:flex-row gap-3">
               <div class="flex-1">
                 <label class="block text-xs font-semibold text-secondary mb-1.5">Land Size</label>
                 <input v-model="form.landSize" class="input-field" placeholder="e.g. 600 sqm, 2 plots" />
