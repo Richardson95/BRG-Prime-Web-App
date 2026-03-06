@@ -3,9 +3,9 @@
     <div class="page-pad pb-10">
 
       <!-- Admin Header -->
-      <div class="flex items-center justify-between mb-6">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-danger/10 rounded-md flex items-center justify-center">
+          <div class="w-10 h-10 bg-danger/10 rounded-md flex items-center justify-center flex-shrink-0">
             <ShieldAlert :size="20" class="text-danger" />
           </div>
           <div>
@@ -13,7 +13,7 @@
             <p class="text-xs text-brand-muted">Full platform control · BRG Prime</p>
           </div>
         </div>
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 flex-wrap">
           <span class="badge bg-success/10 text-success flex items-center gap-1.5">
             <span class="w-1.5 h-1.5 bg-success rounded-full"></span>
             System Online
@@ -152,7 +152,8 @@
 
         <!-- Users Table -->
         <div class="card overflow-hidden">
-          <table class="w-full text-sm">
+          <div class="overflow-x-auto">
+          <table class="w-full text-sm min-w-[560px]">
             <thead>
               <tr class="border-b border-brand-border-light bg-brand-bg">
                 <th class="text-left px-5 py-3 text-xs font-bold text-brand-muted uppercase tracking-wider">User</th>
@@ -209,6 +210,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
 
@@ -232,7 +234,7 @@
         </div>
 
         <!-- Stats -->
-        <div class="grid grid-cols-4 gap-3">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div class="card p-4 text-center">
             <div class="text-xl font-extrabold text-secondary">{{ adminListings.length }}</div>
             <div class="text-xs text-brand-muted mt-0.5">Total</div>
@@ -253,7 +255,8 @@
 
         <!-- Listings Table -->
         <div class="card overflow-hidden">
-          <table class="w-full text-sm">
+          <div class="overflow-x-auto">
+          <table class="w-full text-sm min-w-[600px]">
             <thead>
               <tr class="border-b border-brand-border-light bg-brand-bg">
                 <th class="text-left px-5 py-3 text-xs font-bold text-brand-muted uppercase tracking-wider">Listing</th>
@@ -320,6 +323,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
 
@@ -342,7 +346,8 @@
             <h3 class="font-bold text-secondary">All Transactions</h3>
             <button class="text-primary text-sm font-semibold hover:underline">Export CSV</button>
           </div>
-          <table class="w-full text-sm">
+          <div class="overflow-x-auto">
+          <table class="w-full text-sm min-w-[500px]">
             <thead>
               <tr class="border-b border-brand-border-light bg-brand-bg">
                 <th class="text-left px-5 py-3 text-xs font-bold text-brand-muted uppercase tracking-wider">User</th>
@@ -369,6 +374,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
 

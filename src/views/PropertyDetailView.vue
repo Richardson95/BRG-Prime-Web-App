@@ -7,7 +7,7 @@
           <img :src="property.images[activeImg]" class="w-full h-full object-cover" :alt="property.title" />
         </div>
         <!-- Back -->
-        <button @click="$router.back()" class="absolute top-4 left-8 w-9 h-9 bg-white rounded-md flex items-center justify-center shadow">
+        <button @click="$router.back()" class="absolute top-4 left-4 sm:left-8 w-9 h-9 bg-white rounded-md flex items-center justify-center shadow">
           <ArrowLeft :size="18" class="text-secondary" />
         </button>
         <!-- Favorite -->
@@ -22,7 +22,7 @@
           <Share2 :size="18" class="text-brand-muted" />
         </button>
         <!-- Listing type badge -->
-        <span class="absolute bottom-4 left-8 badge bg-primary text-white px-3 py-1">{{ formatType(property.listingType) }}</span>
+        <span class="absolute bottom-4 left-4 sm:left-8 badge bg-primary text-white px-3 py-1">{{ formatType(property.listingType) }}</span>
         <!-- Thumbnail strip -->
         <div v-if="property.images.length > 1" class="absolute bottom-4 right-4 flex gap-2">
           <div
@@ -117,12 +117,12 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="fixed bottom-0 left-0 right-0 lg:left-64 bg-white border-t border-brand-border p-4 flex items-center justify-between gap-4">
-        <div>
+      <div class="fixed bottom-0 left-0 right-0 lg:left-64 bg-white border-t border-brand-border p-4 flex items-center justify-between gap-3">
+        <div class="flex-1 min-w-0">
           <div class="text-primary text-xl font-extrabold">{{ formatPrice(property.price) }}<span class="text-brand-light text-sm font-normal">{{ priceSuffix }}</span></div>
-          <div class="text-brand-muted text-xs">{{ property.address }}</div>
+          <div class="text-brand-muted text-xs truncate">{{ property.address }}</div>
         </div>
-        <router-link :to="`/book-viewing?id=${property.id}`" class="btn-primary px-8 py-3 text-sm w-auto">Book Viewing</router-link>
+        <router-link :to="`/book-viewing?id=${property.id}`" class="btn-primary px-4 sm:px-8 py-3 text-sm flex-shrink-0">Book Viewing</router-link>
       </div>
     </div>
 

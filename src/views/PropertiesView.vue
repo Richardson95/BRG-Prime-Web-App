@@ -2,19 +2,21 @@
   <AppLayout>
     <div class="page-pad max-w-6xl mx-auto space-y-4">
       <!-- Search & Filter Row -->
-      <div class="flex gap-3">
+      <div class="flex flex-col sm:flex-row gap-3">
         <div class="relative flex-1">
           <Search class="absolute left-3 top-1/2 -translate-y-1/2 text-brand-muted" :size="16" />
           <input v-model="propStore.searchQuery" class="input-field pl-9" placeholder="Search properties..." />
         </div>
-        <select v-model="propStore.selectedLocation" class="input-field w-40">
-          <option>All Locations</option>
-          <option v-for="loc in lagosLocations" :key="loc">{{ loc }}</option>
-        </select>
-        <button @click="showFilter = true" class="btn-secondary px-4 flex items-center gap-2 whitespace-nowrap">
-          <SlidersHorizontal :size="16" />
-          Filter
-        </button>
+        <div class="flex gap-3">
+          <select v-model="propStore.selectedLocation" class="input-field flex-1 sm:w-40 sm:flex-none">
+            <option>All Locations</option>
+            <option v-for="loc in lagosLocations" :key="loc">{{ loc }}</option>
+          </select>
+          <button @click="showFilter = true" class="btn-secondary px-4 flex items-center gap-2 whitespace-nowrap flex-shrink-0">
+            <SlidersHorizontal :size="16" />
+            Filter
+          </button>
+        </div>
       </div>
 
       <!-- Tab Bar -->

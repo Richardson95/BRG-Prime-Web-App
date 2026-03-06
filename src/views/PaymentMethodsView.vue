@@ -1,4 +1,4 @@
-#<template>
+<template>
   <AppLayout>
     <div class="page-pad pb-10 space-y-5">
       <!-- Saved Cards -->
@@ -54,16 +54,16 @@
       <div class="card p-5">
         <h3 class="font-bold text-secondary mb-3">Bank Transfer Details</h3>
         <div class="bg-brand-bg rounded-md p-4 space-y-2">
-          <div class="flex justify-between text-sm">
-            <span class="text-brand-muted">Bank</span>
-            <span class="font-semibold text-secondary">First Bank of Nigeria</span>
+          <div class="flex items-center justify-between gap-2 text-sm">
+            <span class="text-brand-muted flex-shrink-0">Bank</span>
+            <span class="font-semibold text-secondary text-right">First Bank of Nigeria</span>
           </div>
-          <div class="flex justify-between text-sm">
-            <span class="text-brand-muted">Account Name</span>
-            <span class="font-semibold text-secondary">BRG Prime Ltd</span>
+          <div class="flex items-center justify-between gap-2 text-sm">
+            <span class="text-brand-muted flex-shrink-0">Account Name</span>
+            <span class="font-semibold text-secondary text-right">BRG Prime Ltd</span>
           </div>
-          <div class="flex justify-between text-sm">
-            <span class="text-brand-muted">Account No.</span>
+          <div class="flex items-center justify-between gap-2 text-sm">
+            <span class="text-brand-muted flex-shrink-0">Account No.</span>
             <div class="flex items-center gap-2">
               <span class="font-semibold text-secondary">3012345678</span>
               <button class="text-primary hover:underline text-xs">Copy</button>

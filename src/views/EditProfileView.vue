@@ -25,7 +25,7 @@
 
       <form @submit.prevent="save" class="card p-5 space-y-4">
         <!-- Name -->
-        <div class="flex gap-3">
+        <div class="flex flex-col sm:flex-row gap-3">
           <div class="flex-1">
             <label class="block text-xs font-semibold text-secondary mb-1.5">First Name</label>
             <input v-model="firstName" class="input-field" placeholder="First name" required />

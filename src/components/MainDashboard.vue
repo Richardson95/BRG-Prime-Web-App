@@ -63,7 +63,7 @@
     </div>
 
     <!-- Quick Actions -->
-    <div class="grid grid-cols-4 gap-3">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
       <router-link
         v-for="action in quickActions"
         :key="action.label"
@@ -80,17 +80,17 @@
     <!-- Browse By Category -->
     <div>
       <h3 class="section-title">Browse By</h3>
-      <div class="grid grid-cols-4 gap-3">
+      <div class="grid grid-cols-4 gap-2">
         <router-link
           v-for="cat in categories"
           :key="cat.label"
           to="/properties"
-          class="flex flex-col items-center gap-2.5 bg-white rounded-md px-2 py-4 shadow-card hover:shadow-card-hover transition-shadow"
+          class="flex flex-col items-center gap-2 bg-white rounded-md px-1 py-3.5 shadow-card hover:shadow-card-hover transition-shadow"
         >
-          <div class="w-10 h-10 rounded-md flex items-center justify-center" :class="cat.bg">
-            <component :is="cat.icon" :size="20" :class="cat.color" />
+          <div class="w-9 h-9 rounded-md flex items-center justify-center" :class="cat.bg">
+            <component :is="cat.icon" :size="18" :class="cat.color" />
           </div>
-          <span class="text-xs font-semibold text-secondary whitespace-nowrap">{{ cat.label }}</span>
+          <span class="text-[11px] font-semibold text-secondary text-center leading-tight">{{ cat.label }}</span>
         </router-link>
       </div>
     </div>
