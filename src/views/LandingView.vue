@@ -3,7 +3,7 @@
 
     <!-- ── Navbar ──────────────────────────────────────────────────── -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 grid grid-cols-3 items-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between lg:grid lg:grid-cols-3">
 
         <!-- Logo (left) -->
         <router-link to="/" class="flex items-center gap-2.5 flex-shrink-0">
